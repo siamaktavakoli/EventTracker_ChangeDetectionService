@@ -1,0 +1,12 @@
+spring:
+  application:
+    name: change-detector-service
+  kafka:
+    bootstrap-servers: localhost:9092
+server:
+  port: 9999
+# Dynamic service have to fill in here
+cds:
+  topic:
+    input: DS_$$input$$
+    output: CDS_$$output$$
