@@ -1,6 +1,5 @@
 package edu.miu.saproject.service.iml;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
 import edu.miu.saproject.service.StandardDeviationService;
 import edu.miu.saproject.storage.InMemoryStorage;
 import lombok.RequiredArgsConstructor;
@@ -18,8 +17,7 @@ import org.springframework.stereotype.Service;
 @RequiredArgsConstructor
 public class StandardDeviationServiceIml implements StandardDeviationService {
 
-    private final KafkaTemplate<String, Object> kafkaTemplate;
-    private final ObjectMapper mapper;
+    private final KafkaTemplate<String, Integer> kafkaTemplate;
 
     @Value("${cds.topic.output}")
     private String outputTopic;
@@ -43,7 +41,7 @@ public class StandardDeviationServiceIml implements StandardDeviationService {
             if (rate > 50) {
                 result = 1;
             }
-            kafkaTemplate.send(outputTopic, mapper.writeValueAsString(result));
+            kafkaTemplate.send(outputTopic, result);
         } catch (Exception ex) {
             log.info("Error: ", ex);
         }
