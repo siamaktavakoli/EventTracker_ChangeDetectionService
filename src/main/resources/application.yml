@@ -25,8 +25,8 @@ server:
 # Dynamic service have to fill in here
 cds:
   topic:
-    input: DS_$$input$$
-    output: CDS_$$output$$
+    input: $$input$$
+    output: $$output$$
 #cds:
 #  topic:
 #    input: datasourceOne
