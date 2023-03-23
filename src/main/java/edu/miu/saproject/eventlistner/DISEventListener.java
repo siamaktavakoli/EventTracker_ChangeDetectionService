@@ -9,10 +9,7 @@ import org.springframework.messaging.handler.annotation.Headers;
 import org.springframework.messaging.handler.annotation.Payload;
 import org.springframework.stereotype.Component;
 
-/**
- * Author: Kuylim TITH
- * Date: 3/20/2023
- */
+
 @Slf4j
 @Component
 @RequiredArgsConstructor

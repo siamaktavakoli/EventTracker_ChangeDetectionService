@@ -8,10 +8,6 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.stereotype.Service;
 
-/**
- * Author: Kuylim TITH
- * Date: 3/20/2023
- */
 @Slf4j
 @Service
 @RequiredArgsConstructor
